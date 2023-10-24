@@ -1,0 +1,1 @@
+SECRET_KEY = "django-insecure-mih$!ub!(lsoz1uij%zp+9-a1j5gbgefyzxa532nc)l@gthiz("
