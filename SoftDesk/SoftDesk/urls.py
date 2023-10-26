@@ -19,9 +19,11 @@ from rest_framework.routers import DefaultRouter
 from projects.views import ProjectViewSet
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from authentication.views import UserCreateAPIView, ManageUserView
+from issues.views import IssuesViewSet
 
 router = DefaultRouter()
-router.register(r'projects', ProjectViewSet)
+router.register(r'projects', ProjectViewSet, basename='projects'),
+router.register(r'issues', IssuesViewSet, basename='issue'),
 
 urlpatterns = [
     path("admin/", admin.site.urls),

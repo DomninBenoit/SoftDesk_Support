@@ -1,4 +1,3 @@
-from django.core.exceptions import ValidationError
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
@@ -10,7 +9,6 @@ from authentication.serializers import UserSerializer
 
 
 class ProjectViewSet(ModelViewSet):
-    queryset = Project.objects.all()
     serializer_class = ProjectSerializer
     permission_classes = [permissions.IsAuthenticated, IsAuthorOrContributor]
 

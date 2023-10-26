@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from .models import Project
 from authentication.models import User
-from authentication.serializers import UserSerializer
 
 
 class ProjectSerializer(serializers.ModelSerializer):
@@ -11,7 +10,7 @@ class ProjectSerializer(serializers.ModelSerializer):
         read_only_fields = ('author', 'created_time')
 
     def create(self, validated_data):
-        validated_data["author"]=self.context["request"].user
+        validated_data["author"] = self.context["request"].user
         return super().create(validated_data)
 
 
