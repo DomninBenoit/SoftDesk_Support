@@ -9,8 +9,10 @@ class IsAuthor(BasePermission):
 class IsAuthorOrContributor(BasePermission):
     def has_object_permission(self, request, view, obj):
         project = obj
-        user_related_field = obj.author
-        if hasattr(obj, 'assigned_to'):
+        user_related_field = None
+        if isinstance(obj, Project):
+            user_related_field = obj.author
+        elif hasattr(obj, 'assigned_to'):
             project = obj.project
             user_related_field = obj.assigned_to
         elif hasattr(obj, 'issue'):
