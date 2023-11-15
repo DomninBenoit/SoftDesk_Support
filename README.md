@@ -39,6 +39,9 @@ Activation de l'environnement virtuel :
 Installation des dépendances:
 > pip install -r requirements.txt
 
+Entrer dans le répertoire du projet:
+> cd .\SoftDesk\
+
 Génération de la 'SECRET_KEY' :
 - Dans le répertoire contenant 'settings.py', créez un fichier 'settings_secret.py'.
 - Utilisez la commande suivante:
